@@ -1,0 +1,67 @@
+#selectDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .selectPart {
+    margin-right: 20px; 
+  }
+  
+  .custom-label {
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .custom-select {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .custom-select select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1em;
+  }
+  
+  .custom-select input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1em;
+  }
+  
+  .course-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .course-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .course-name {
+    color: #ff4081; 
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .course-name:hover {
+    color: #c200cc; 
+  }
+  

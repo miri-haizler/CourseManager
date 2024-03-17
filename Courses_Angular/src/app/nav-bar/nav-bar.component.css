@@ -1,0 +1,41 @@
+
+ .mui-menu {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .mui-menu-item {
+    margin: 0 10px;
+  }
+ .mui-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .mui-menu-item {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .mui-menu-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .mui-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .mui-link i {
+    margin-right: 10px;
+  }
+  
+  .material-icons {
+    font-size: 18px;
+  }

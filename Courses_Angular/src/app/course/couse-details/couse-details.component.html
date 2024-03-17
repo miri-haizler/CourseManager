@@ -1,0 +1,35 @@
+
+<div class="course-details">
+  <div class="ccc">
+    <label for="">course name:</label>
+    <h2 class="detail">{{course?.courseName}}</h2>
+    <label >course image:</label>
+  
+    <div class="detail"><img src="/assets/{{img}}" ></div>
+    <!-- <h2>{{.img}}</h2> -->
+    <label for="">course id:</label>
+  
+    <h2 class="detail">{{course?.courseId}}</h2>
+  </div>
+  
+    <img src="/assets/{{course?.image}}">
+  
+    <h2>{{course?.categoryId}}</h2>
+  
+    <div [ngStyle]="getDateStyle()">
+      {{ course?.startCourse }}
+    </div>
+
+
+    <!-- <p> <i class="material-icons">{{course?.learning | iconPipe}}</i>-  The Way of Studying </p>  -->
+    <img [src]="course?.learning | iconPipe">
+  
+    <div [ngStyle]="getDateStyle()">
+      <h6> {{ course?.startCourse | date: 'short' }}</h6>
+    </div>
+    
+    <button [disabled]="!canEditCourse" (click)="editCourse()">Edit Course</button>
+    <div>{{course?.learning}}</div>
+  
+  </div>
+

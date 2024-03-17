@@ -1,0 +1,80 @@
+
+    <form [formGroup]="addCourseForm" (ngSubmit)="onSubmit()" class="form-container">
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Name:</mat-label>
+          <input matInput formControlName="courseName" id="courseName" required placeholder="Enter course name">
+          <mat-error *ngIf="addCourseForm.get('courseName')?.touched && addCourseForm.get('courseName')?.hasError('required')">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+    
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Category ID:</mat-label>
+          <input matInput formControlName="categoryId" id="categoryId" required placeholder="Enter category ID">
+          <mat-error *ngIf="addCourseForm.get('categoryId')?.touched && addCourseForm.get('categoryId')?.hasError('required')">
+            Category ID is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+    
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Count Of Lessons:</mat-label>
+          <input matInput formControlName="CountOfLessons" id="CountOfLessons" required placeholder="Enter count of lessons">
+          <mat-error *ngIf="addCourseForm.get('CountOfLessons')?.touched && addCourseForm.get('CountOfLessons')?.hasError('required')">
+            Count Of Lessons is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+    
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="StartDate" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    
+      <div formArrayName="SyllabusOfCourse">
+        <div *ngFor="let silavo of silavos.controls; let i=index" class="form-row">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Syllabus {{i + 1}}</mat-label>
+            <input matInput type="text" [formControlName]="i" (input)="onChangeSilavo(i)" placeholder="Enter syllabus {{i + 1}}">
+          </mat-form-field>
+        </div>
+      </div>
+    
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Learning Type</mat-label>
+          <select matNativeControl formControlName="learningType">
+            <option value="0">Frontal</option>
+            <option value="1">Zoom</option>
+          </select>
+        </mat-form-field>
+      </div>
+    
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Lecturer ID:</mat-label>
+          <input matInput formControlName="LecturerId" id="LecturerId" type="number" required placeholder="Enter lecturer ID">
+        </mat-form-field>
+      </div>
+    
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Image URL:</mat-label>
+          <input matInput formControlName="image" id="image" type="text" required placeholder="Enter image URL">
+        </mat-form-field>
+      </div>
+    
+      <div class="form-row">
+        <button type="submit" mat-raised-button class="submit-button">Add Course</button>
+      </div>
+    </form>
+    
+    

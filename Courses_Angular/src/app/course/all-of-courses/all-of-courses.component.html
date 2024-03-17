@@ -1,0 +1,33 @@
+<div id="selectDiv">
+    <div class="selectPart">
+        <label class="custom-label">select category</label>
+        <div class="custom-select">
+            <select [(ngModel)]="selectedCategory" (change)="changeFilter()" id="categoryFilter">
+                <option value="-1">All</option>
+                <option *ngFor="let category of categories" [value]="category.categoryId">{{  category.categoryId}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="selectPart">
+        <label class="custom-label">select learning type</label>
+        <div class="custom-select">
+            <select [(ngModel)]="selectedLearningType" (change)="changeFilter()" id="learningTypeFilter">
+                <option value="-1">All</option>
+                <option value="0">Zoom</option>
+                <option value="1">Frontal</option>
+            </select>
+        </div>
+    </div>
+    <div class="selectPart">
+        <label class="custom-label">select  name</label>
+        <input matInput type="text" [(ngModel)]="selectedName" (input)="changeFilter()" placeholder="select name" />
+    </div>
+</div>
+
+
+<div *ngFor="let c of course">
+    <div class="course-item" (click)="showDetails(c)">
+        <p class="course-name">{{c.courseName}}</p>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+
+  <form [formGroup]="lecturerLoginForm" (ngSubmit)="lecturerLogin()" class="form-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name" id="name" required placeholder="Enter your name">
+      <mat-error *ngIf="lecturerLoginForm.get('name')?.touched && lecturerLoginForm.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+      <mat-error *ngIf="lecturerLoginForm.get('name')?.touched && lecturerLoginForm.get('name')?.hasError('pattern')">
+        Name must contain only letters and spaces
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" id="password" required placeholder="Enter your password">
+      <mat-error *ngIf="lecturerLoginForm.controls['password'].touched && lecturerLoginForm.controls['password'].errors?.['required']">
+        Password is required
+      </mat-error>
+      <mat-error *ngIf="lecturerLoginForm.controls['password'].touched && lecturerLoginForm.controls['password'].errors?.['minlength']">
+        Password must be at least 6 characters long
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Name Of Course</mat-label>
+      <input matInput type="text" formControlName="NameOfCourse" id="NameOfCourse" required placeholder="Enter your name of course">
+      <mat-error *ngIf="lecturerLoginForm.get('NameOfCourse')?.touched && lecturerLoginForm.get('NameOfCourse')?.hasError('required')">
+        Name Of Course is required
+      </mat-error>
+    </mat-form-field>
+  
+    <button type="submit" mat-raised-button color="primary" class="submit-button">Login</button>
+  </form>
+  
